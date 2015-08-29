@@ -1,0 +1,27 @@
+
+uniform mat4 uModelViewM;
+uniform mat4 uProjM;
+uniform mat4 uNormalM;
+
+uniform vec3 uColor;
+uniform float uSaturation;
+
+attribute vec3 aPosition;
+attribute vec3 aNormal;
+attribute vec2 aTexPosition;
+
+varying vec3 vPosition;
+varying vec3 vNormal;
+varying vec3 vColor;
+
+void main() {
+	gl_Position = uProjM * (uModelViewM * vec4(aPosition, 1.0));
+	
+	vPosition = gl_Position.xyz;
+	
+	vNormal = (uNormalM * vec4(aNormal, 0.0)).xyz;	
+	vColor = uColor;
+	
+	float gray = dot(vColor, vec3(0.299, 0.587, 0.114));
+	vColor.rgb = mix(vec3(gray), vColor, uSaturation);
+}

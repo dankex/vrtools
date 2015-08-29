@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common strings -->
+    <string name="app_name">Shaderize²</string>
+    <string name="title">Shaderize² (%.1ffps)</string>
+
+    <!-- Button texts -->
+    <string name="button_menu">Menu</string>
+    <string name="button_back">Back</string>
+    <string name="button_shader">Select Shader</string>
+    <string name="button_prefs">Edit Preferences</string>
+    <string name="button_about">About Shaderize²</string>
+    <string name="button_quit">Quit</string>
+
+    <!-- About dialog -->
+    <string name="about_title">About Shaderize²</string>
+    <string name="about_content">Full source code for this application is available on GitHub\n
+www.github.com/harism/android_shaderize\n
+\n
+For error reporting, and so on, you can always leave me an email\n
+harism@gmail.com</string>
+    <string name="about_footer">© Harri Smått, 2012</string>
+
+    <!-- Menu titles -->
+    <string name="menu_main_title">Main Menu</string>
+    <string name="menu_shader_title">Select Shader</string>
+    <string name="menu_prefs_global_title">Global Preferences</string>
+    <string name="menu_prefs_shader_title">Shader Preferences</string>
+
+    <!-- Shaders -->
+    <string name="shader_flat_name">Flat Shader</string>
+    <string name="shader_flat_info">Basic flat shading rendering.</string>
+    <string name="shader_lightning_name">Lightning Shader</string>
+    <string name="shader_lightning_info">Per pixel diffuse on specular lightning.</string>
+    <string name="shader_rounded_name">Rounded Cubes</string>
+    <string name="shader_rounded_info">Rounded cubes with per pixel lightning.</string>
+    <string name="shader_fxaa_name">FXAA Shader</string>
+    <string name="shader_fxaa_info">FXAA anti-aliasing filter.</string>
+    <string name="shader_bloom_name">Bloom Shader</string>
+    <string name="shader_bloom_info">Bloom filter over flat rendered source.</string>
+    <string name="shader_dof_name">Depth of Field Shader</string>
+    <string name="shader_dof_info">Depth of field over flat rendered source.</string>
+    <string name="shader_hex_name">Hexagonal Fill Shader</string>
+    <string name="shader_hex_info">Hexagonal filled flat rendered source.</string>
+
+    <!-- Preference strings -->
+    <string name="prefs_flat_saturation">Grayscale Saturation Value</string>
+    <string name="prefs_lightning_ambient_factor">Ambient Factor Value</string>
+    <string name="prefs_lightning_diffuse_factor">Diffuse Factor Value</string>
+    <string name="prefs_lightning_specular_factor">Specular Factor Value</string>
+    <string name="prefs_lightning_shininess">Shininess Value</string>
+    <string name="prefs_rounded_ambient_factor">Ambient Factor Value</string>
+    <string name="prefs_rounded_diffuse_factor">Diffuse Factor Value</string>
+    <string name="prefs_rounded_specular_factor">Specular Factor Value</string>
+    <string name="prefs_rounded_shininess">Shininess Value</string>
+    <string name="prefs_bloom_radius">Bloom Radius Value</string>
+    <string name="prefs_bloom_threshold">Bloom Threshold Value</string>
+    <string name="prefs_bloom_source_intensity">Source Intensity Value</string>
+    <string name="prefs_bloom_bloom_intensity">Bloom Intensity Value</string>
+    <string name="prefs_dof_radius">Lens Blur Radius</string>
+    <string name="prefs_dof_fstop">Lens Blur F/Stop</string>
+    <string name="prefs_dof_fplane">Lens Blur Focal Plane</string>
+    <string name="prefs_hex_radius">Hexagon Radius Value</string>
+
+    <!-- Prefererence keys -->
+    <string name="prefs_key_shader">prefs_key_shader</string>
+    <string name="prefs_key_flat_saturation">prefs_key_flat_saturation</string>
+    <string name="prefs_key_lightning_ambient_factor">prefs_key_lightning_ambient_factor</string>
+    <string name="prefs_key_lightning_diffuse_factor">prefs_key_lightning_diffuse_factor</string>
+    <string name="prefs_key_lightning_specular_factor">prefs_key_lightning_specular_factor</string>
+    <string name="prefs_key_lightning_shininess">prefs_key_lightning_shininess</string>
+    <string name="prefs_key_rounded_ambient_factor">prefs_key_rounded_ambient_factor</string>
+    <string name="prefs_key_rounded_diffuse_factor">prefs_key_rounded_diffuse_factor</string>
+    <string name="prefs_key_rounded_specular_factor">prefs_key_rounded_specular_factor</string>
+    <string name="prefs_key_rounded_shininess">prefs_key_rounded_shininess</string>
+    <string name="prefs_key_bloom_radius">prefs_key_bloom_radius</string>
+    <string name="prefs_key_bloom_threshold">prefs_key_bloom_threshold</string>
+    <string name="prefs_key_bloom_source_intensity">prefs_key_bloom_source_intensity</string>
+    <string name="prefs_key_bloom_bloom_intensity">prefs_key_bloom_bloom_intensity</string>
+    <string name="prefs_key_dof_radius">prefs_key_dof_radius</string>
+    <string name="prefs_key_dof_fstop">prefs_key_dof_fstop</string>
+    <string name="prefs_key_dof_fplane">prefs_key_dof_fplane</string>
+    <string name="prefs_key_hex_radius">prefs_key_hex_radius</string>
+
+    <!-- Error strings -->
+    <string name="error_shader_compiler">Error, shader compiler not supported.</string>
+
+</resources>

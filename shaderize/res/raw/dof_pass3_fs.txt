@@ -1,0 +1,37 @@
+
+precision mediump float;
+
+uniform float uSteps;
+uniform sampler2D sTexture1;
+uniform sampler2D sTexture2;
+uniform vec2 uDelta1;
+uniform vec2 uDelta2;
+varying vec2 vTextureCoord;
+
+void main() {
+	vec2 textureCoord1 = vTextureCoord - uDelta2 * 0.5;
+	gl_FragColor = texture2D(sTexture1, textureCoord1);
+	vec4 sample = texture2D(sTexture2, vTextureCoord);
+	float coc1 = max(0.001, gl_FragColor.a), coc2 = max(0.001, sample.a);
+	gl_FragColor += 2.0 * sample;
+	float sum = 3.0;
+	
+	float maxT = coc1 * uSteps, invSteps = 1.0 / uSteps;
+	for (float t = coc1; t <= maxT; t += coc1) {
+		sample = texture2D(sTexture1, textureCoord1 + (t * uDelta1));
+		if (sample.a > t * invSteps) {
+			gl_FragColor += sample;
+			sum += 1.0;
+		}
+	}
+	maxT = coc2 * uSteps;
+	for (float t = coc2; t <= maxT; t += coc2) {
+		sample = texture2D(sTexture2, vTextureCoord + (t * uDelta2));
+		if (sample.a > t * invSteps) {
+			gl_FragColor += 2.0 * sample;
+			sum += 2.0;
+		}
+	}
+	
+	gl_FragColor /= sum;
+}
