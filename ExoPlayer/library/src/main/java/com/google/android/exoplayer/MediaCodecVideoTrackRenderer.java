@@ -437,10 +437,6 @@ public class MediaCodecVideoTrackRenderer extends MediaCodecTrackRenderer {
       return true;
     }
 
-    // I guess this means a buffer is going to be pushed to surface
-    // late frames have already been dropped
-    FPSCounter.tick();
-
     if (!renderedFirstFrame) {
       if (Util.SDK_INT >= 21) {
         renderOutputBufferV21(codec, bufferIndex, System.nanoTime());
@@ -544,6 +540,10 @@ public class MediaCodecVideoTrackRenderer extends MediaCodecTrackRenderer {
   }
 
   private void maybeNotifyDrawnToSurface() {
+    // I guess this means a buffer is going to be pushed to surface
+    // late frames have already been dropped
+    FPSCounter.tick();
+
     if (eventHandler == null || eventListener == null || reportedDrawnToSurface) {
       return;
     }
