@@ -1,7 +1,6 @@
-package com.smcl.test.movinglinetest;
+package com.google.android.exoplayer.util;
 
 import android.os.SystemClock;
-
 import android.util.Log;
 
 public class FPSCounter {
@@ -21,7 +20,7 @@ public class FPSCounter {
         long currentTime = System.currentTimeMillis();
         if (currentTime - startTimeMillis >= interval) {
             int fps = (int) (frames * 1000 / interval);
-            Log.v("FPSCount:LineTest", "FPS : " + fps);
+            Log.v("FPSCount:ExoPlayer", "FPS : " + fps);
             frames = 0;
             startTimeMillis = currentTime;
         }
@@ -31,7 +30,7 @@ public class FPSCounter {
         long duration = SystemClock.uptimeMillis() - startTime;
         float avgFPS = sumFrames / (duration / 1000f);
 
-        Log.v("FPSCounter",
+        Log.v("FPSCount:ExoPlayer",
                 String.format("total frames = %d, total elapsed time = %d ms, average fps = %f",
                 sumFrames, duration, avgFPS));
     }

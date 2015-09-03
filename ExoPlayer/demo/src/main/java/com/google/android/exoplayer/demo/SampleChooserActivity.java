@@ -50,6 +50,9 @@ public class SampleChooserActivity extends Activity {
     ListView sampleList = (ListView) findViewById(R.id.sample_list);
     final SampleAdapter sampleAdapter = new SampleAdapter(this);
 
+    sampleAdapter.add(new Header("Local Files"));
+    sampleAdapter.addAll((Object[]) Samples.LOCAL_MP4);
+
     sampleAdapter.add(new Header("YouTube DASH"));
     sampleAdapter.addAll((Object[]) Samples.YOUTUBE_DASH_MP4);
     sampleAdapter.add(new Header("Widevine GTS DASH"));
@@ -81,6 +84,14 @@ public class SampleChooserActivity extends Activity {
         }
       }
     });
+
+    // Start with something playing
+    Samples.Sample startSample = Samples.LOCAL_MP4[0];
+    Intent mpdIntent = new Intent(this, PlayerActivity.class)
+            .setData(Uri.parse(startSample.uri))
+            .putExtra(PlayerActivity.CONTENT_ID_EXTRA, startSample.contentId)
+            .putExtra(PlayerActivity.CONTENT_TYPE_EXTRA, startSample.type);
+    startActivity(mpdIntent);
   }
 
   private void onSampleSelected(Sample sample) {

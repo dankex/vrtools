@@ -16,6 +16,7 @@
 package com.google.android.exoplayer;
 
 import com.google.android.exoplayer.drm.DrmSessionManager;
+import com.google.android.exoplayer.util.FPSCounter;
 import com.google.android.exoplayer.util.MimeTypes;
 import com.google.android.exoplayer.util.TraceUtil;
 import com.google.android.exoplayer.util.Util;
@@ -435,6 +436,10 @@ public class MediaCodecVideoTrackRenderer extends MediaCodecTrackRenderer {
       dropOutputBuffer(codec, bufferIndex);
       return true;
     }
+
+    // I guess this means a buffer is going to be pushed to surface
+    // late frames have already been dropped
+    FPSCounter.tick();
 
     if (!renderedFirstFrame) {
       if (Util.SDK_INT >= 21) {

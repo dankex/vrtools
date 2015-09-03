@@ -15,6 +15,9 @@
  */
 package com.google.android.exoplayer.demo;
 
+import android.net.Uri;
+
+import java.io.File;
 import java.util.Locale;
 
 /**
@@ -41,6 +44,12 @@ import java.util.Locale;
     }
 
   }
+
+  public static final Sample[] LOCAL_MP4 = new Sample[] {
+            new Sample("NASA rbsp launch (2:06)",
+                    "file:///sdcard/rbsp_launch_1080p.mp4",
+                    PlayerActivity.TYPE_OTHER)
+    };
 
   public static final Sample[] YOUTUBE_DASH_MP4 = new Sample[] {
     new Sample("Google Glass",
